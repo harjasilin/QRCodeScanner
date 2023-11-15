@@ -12,7 +12,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/page/home';
 import ScannerQR from './src/component/scannerQR';
 import Detail from './src/page/details';
-import QRScannerFromGallery from './src/component/takeFromGallery';
 const Stack = createStackNavigator();
 const App = () => {
 
@@ -22,8 +21,6 @@ const App = () => {
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name="ScannerQR" component={ScannerQR} options={{ headerShown: false }} />
         <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false }} />
-        <Stack.Screen name="QRScannerFromGallery" component={QRScannerFromGallery} options={{ headerShown: false }} />
-
 
       </Stack.Navigator>
 

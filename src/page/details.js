@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
     StyleSheet,
     Text,
@@ -11,9 +11,10 @@ import { useRoute } from '@react-navigation/native';
 const Detail = ({ navigation }) => {
     const route = useRoute();
     const data = route?.params?.data;
+
     return (
-        <View style={{ alignItems: 'center', flex: 1, marginTop: 20 }}>
-            <Text style={{ color: 'black', fontSize: 30 }}>Details</Text>
+        <View style={styles.wrapper}>
+            <Text style={styles.detail}>Details</Text>
             <Text style={{ color: 'red', fontSize: 20 }}>{data}</Text>
 
         </View>
@@ -22,13 +23,15 @@ const Detail = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
-    centerText: {
-        height: 40,
-        width: '80%', backgroundColor: '#355f85', justifyContent: 'center', alignItems: 'center', borderRadius: 10
-
+    wrapper: {
+        alignItems: 'center',
+        flex: 1,
+        marginTop: 20
     },
-    buttonText: { color: 'white' }
-
+    detail: {
+        color: 'black',
+        fontSize: 30
+    }
 });
 
 export default Detail;

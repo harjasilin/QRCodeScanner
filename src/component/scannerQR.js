@@ -15,7 +15,7 @@ const ScannerQR = ({ navigation }) => {
     const handleRead = ({ data }) => {
         setQRData(data);
 
-        Alert.alert(data, '', [
+        Alert.alert('Scanned', '', [
             {
                 text: 'OK',
                 onPress: () => {
@@ -23,9 +23,8 @@ const ScannerQR = ({ navigation }) => {
                 },
             },
         ]);
-        console.log(data[0].empId, 'data')
-        // const dataArray = data.split(',').map(item => item.trim());
-        // console.log(dataArray[0].empId, 'khvkhvk');
+
+
     };
 
 
