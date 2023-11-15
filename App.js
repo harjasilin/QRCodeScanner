@@ -7,26 +7,27 @@ import {
   Alert,
   View,
 } from 'react-native';
-import { RNCamera } from 'react-native-camera';
-import QRCodeScanner from 'react-native-qrcode-scanner';
-
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './src/page/home';
+import ScannerQR from './src/component/scannerQR';
+import Detail from './src/page/details';
+import QRScannerFromGallery from './src/component/takeFromGallery';
+const Stack = createStackNavigator();
 const App = () => {
 
   return (
-    <QRCodeScanner
-      onRead={({ data }) => Alert.alert('hi')}
-      flashMode={RNCamera.Constants.FlashMode.torch}
-      reactivate={true}
-      reactivateTimeout={500}
-      showMarker={true}
-      topContent={
-        <Text style={styles.centerText}>
-          Go to{' '}
-          <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-          your computer and scan the QR code.
-        </Text>
-      }
-    />
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name="ScannerQR" component={ScannerQR} options={{ headerShown: false }} />
+        <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false }} />
+        <Stack.Screen name="QRScannerFromGallery" component={QRScannerFromGallery} options={{ headerShown: false }} />
+
+
+      </Stack.Navigator>
+
+    </NavigationContainer>
 
   );
 }
